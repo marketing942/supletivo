@@ -38,12 +38,12 @@ export default function Header() {
             <Image
               src="/logo-cppem.png"
               alt="Cppem Concursos"
-              width={96}
-              height={96}
+              width={700}
+              height={239}
               priority
-              className="h-11 w-11 object-contain"
+              className="h-10 w-auto"
             />
-            <span className="block text-[10px] uppercase tracking-[0.2em] text-white/50">
+            <span className="block border-l border-white/15 pl-3 text-[10px] uppercase tracking-[0.2em] text-white/50">
               Supletivo
             </span>
           </Link>

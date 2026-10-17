@@ -107,6 +107,37 @@ function validate(nome: string, email: string, phone: string): Errors {
   return errors;
 }
 
+/* UTMs: só existem na URL do PRIMEIRO acesso. Gravamos ao carregar e lemos do
+   storage no envio (first touch), igual ao Contato-CPPEM. O try/catch cobre
+   storage bloqueado (aba anônima, ITP). */
+const UTM_CAMPOS = ["utm_source", "utm_campaign"] as const;
+
+function guardarUTMs() {
+  const qs = new URLSearchParams(window.location.search);
+
+  UTM_CAMPOS.forEach((chave) => {
+    const valor = qs.get(chave);
+    if (!valor) return;
+
+    try {
+      sessionStorage.setItem(chave, valor);
+    } catch {
+      /* storage indisponível: segue sem persistir */
+    }
+  });
+}
+
+function utm(chave: (typeof UTM_CAMPOS)[number]) {
+  const daUrl = new URLSearchParams(window.location.search).get(chave);
+  if (daUrl) return daUrl;
+
+  try {
+    return sessionStorage.getItem(chave) || "";
+  } catch {
+    return "";
+  }
+}
+
 /** Número nacional só com dígitos, sem o país, para gravar na planilha. */
 function digitosNacionais(value: string) {
   return value.trim().replace(/^\+\s*55\s*/, "").replace(/\D/g, "");
@@ -159,6 +190,10 @@ export default function LeadProvider({
     originRef.current = from || "site";
     setErrors({});
     setOpen(true);
+  }, []);
+
+  useEffect(() => {
+    guardarUTMs();
   }, []);
 
   useEffect(() => {
@@ -235,6 +270,8 @@ export default function LeadProvider({
         origem: originRef.current,
         mensagem: messageRef.current,
         pagina: window.location.href,
+        utm_source: utm("utm_source"),
+        utm_campaign: utm("utm_campaign"),
         data: new Date().toLocaleString("pt-BR", {
           timeZone: "America/Recife",
         }),
@@ -362,7 +399,7 @@ export default function LeadProvider({
                 type="submit"
                 id="lead_submit"
                 disabled={enviando}
-                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-black uppercase tracking-wide text-ink-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-[#1fba57] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 sm:text-base"
+                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full btn-gold px-6 py-4 text-sm font-black uppercase tracking-wide text-ink-950 shadow-glow transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 sm:text-base"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 {enviando ? "Redirecionando..." : "Enviar e falar no WhatsApp"}

@@ -12,9 +12,9 @@ export default function Footer() {
               <Image
                 src="/logo-cppem.png"
                 alt="Cppem Concursos"
-                width={96}
-                height={96}
-                className="h-12 w-12 object-contain"
+                width={700}
+                height={239}
+                className="h-12 w-auto"
               />
               <div>
                 <p className="text-lg font-black text-brand">Cppem Concursos</p>
@@ -35,7 +35,7 @@ export default function Footer() {
             </p>
             <LeadCtaButton
               origin="rodape"
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-ink-950 shadow-glow transition hover:bg-brand-400"
+              className="mt-4 inline-flex items-center gap-2 rounded-full btn-gold px-5 py-2.5 text-sm font-bold text-ink-950 shadow-glow transition hover:bg-brand-400"
             >
               <WhatsAppIcon className="h-4 w-4" />
               Fale no WhatsApp

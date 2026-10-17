@@ -112,7 +112,7 @@ export default function Plans() {
                 origin={`plano-${p.name}`}
                 className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 text-sm font-black transition ${
                   p.highlight
-                    ? "bg-brand text-ink-950 shadow-glow hover:-translate-y-0.5 hover:bg-brand-400"
+                    ? "btn-gold shadow-glow hover:-translate-y-0.5 hover:bg-brand-400"
                     : "border border-white/15 bg-white/5 text-white hover:bg-white/10"
                 }`}
               >

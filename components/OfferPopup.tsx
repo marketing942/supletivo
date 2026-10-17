@@ -110,7 +110,7 @@ export default function OfferPopup() {
               setOpen(false);
               openLeadForm(WHATSAPP_MESSAGES.popup, "popup-oferta");
             }}
-            className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 text-sm font-black text-ink-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-400 sm:text-base"
+            className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full btn-gold px-6 py-4 text-sm font-black text-ink-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-400 sm:text-base"
           >
             <WhatsAppIcon className="h-5 w-5" />
             Quero minha condição especial

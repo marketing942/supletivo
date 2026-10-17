@@ -41,7 +41,7 @@ export default function Dreams() {
 
             <LeadCtaButton
               origin="sonhos"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 text-sm font-black text-ink-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-400"
+              className="mt-8 inline-flex items-center gap-2 rounded-full btn-gold px-7 py-3.5 text-sm font-black text-ink-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-400"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Quero transformar minha vida

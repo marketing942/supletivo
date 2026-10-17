@@ -7,6 +7,53 @@ import {
   StarIcon,
 } from "./icons";
 
+/** Capelo de formatura (decorativo) — pousado de lado sobre o "T". */
+function GraduationCap({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 120 80" className={className} aria-hidden="true">
+      <defs>
+        <linearGradient id="cap-gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#F0DCB0" />
+          <stop offset="0.55" stopColor="#C9AE7A" />
+          <stop offset="1" stopColor="#AF9256" />
+        </linearGradient>
+        <linearGradient id="cap-dark" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#2A2A33" />
+          <stop offset="1" stopColor="#111115" />
+        </linearGradient>
+      </defs>
+      {/* base (calota) */}
+      <path
+        d="M28 38v18c0 9 15 16 32 16s32-7 32-16V38L60 50z"
+        fill="url(#cap-dark)"
+        stroke="#AF9256"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+      />
+      {/* prancha */}
+      <path
+        d="M60 6 118 30 60 54 2 30z"
+        fill="url(#cap-gold)"
+        stroke="#F0DCB0"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path d="M60 14 98 30 60 46 22 30z" fill="rgba(10,10,11,0.18)" />
+      {/* botão + borla */}
+      <circle cx="60" cy="30" r="4.5" fill="#111115" />
+      <path
+        d="M60 30 102 38v26"
+        fill="none"
+        stroke="url(#cap-gold)"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <path d="M102 62l-4 12h8z" fill="url(#cap-gold)" />
+      <circle cx="102" cy="63" r="3.5" fill="url(#cap-gold)" />
+    </svg>
+  );
+}
+
 export default function Hero() {
   return (
     <section
@@ -27,8 +74,12 @@ export default function Hero() {
             Supletivo EJA reconhecido pelo MEC
           </span>
 
-          <h1 className="mt-6 text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Termine o Ensino Fundamental + Médio em{" "}
+          <h1 className="mt-10 text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="relative inline-block">
+              <GraduationCap className="pointer-events-none absolute -left-[0.6em] -top-[1.18em] h-[1.4em] w-[1.95em] -rotate-[16deg] drop-shadow-[0_6px_14px_rgba(0,0,0,0.55)]" />
+              Termine
+            </span>{" "}
+            o Ensino Fundamental + Médio em{" "}
             <span className="text-gradient-brand">apenas 90 dias!</span>
           </h1>
 
@@ -42,7 +93,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <LeadCtaButton
               origin="hero"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-8 py-4 text-base font-black text-ink-950 shadow-glow-lg transition hover:-translate-y-0.5 hover:bg-brand-400 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full btn-gold px-8 py-4 text-base font-black text-ink-950 shadow-glow-lg transition hover:-translate-y-0.5 hover:bg-brand-400 sm:w-auto"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Quero começar agora

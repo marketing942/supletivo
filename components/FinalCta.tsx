@@ -28,7 +28,7 @@ export default function FinalCta() {
             <div className="mt-8 flex justify-center">
               <LeadCtaButton
                 origin="cta-final"
-                className="inline-flex items-center gap-3 rounded-full bg-brand px-8 py-4 text-base font-black text-ink-950 shadow-glow-lg transition hover:-translate-y-0.5 hover:bg-brand-400"
+                className="inline-flex items-center gap-3 rounded-full btn-gold px-8 py-4 text-base font-black text-ink-950 shadow-glow-lg transition hover:-translate-y-0.5 hover:bg-brand-400"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 Falar com consultor agora

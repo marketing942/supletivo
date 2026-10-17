@@ -1,7 +1,22 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Oxanium, Rajdhani } from "next/font/google";
 import { GTM_LOADER_URL } from "@/lib/constants";
 import "./globals.css";
+
+const display = Oxanium({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const body = Rajdhani({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Supletivo Online em 90 Dias | Cppem Concursos",
@@ -30,7 +45,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${display.variable} ${body.variable}`}>
       <body className="font-sans">
         {/* GTM server-side (carrega a PixelX). Sem `id=GTM-XXXX`: o container
             está no path do loader first-party. */}
@@ -42,6 +57,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'?l='+l:'';j.async=true;j.src=
 (window,document,'script','dataLayer');`}
         </Script>
         {children}
+        <noscript>
+          <iframe
+            src="https://sgtm.cppem.com.br/ns.html?id=GTM-PJ379FLQ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
       </body>
     </html>
   );
