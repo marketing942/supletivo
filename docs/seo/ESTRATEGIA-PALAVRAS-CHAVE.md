@@ -59,7 +59,7 @@ URL por intenção.
 
 | Intenção / busca | URL que deve responder | Situação |
 |---|---|---|
-| supletivo online / EJA online | este site (canonical do domínio de produção) | Implementado |
+| supletivo online / EJA online | supletivo.cppem.com.br | Implementado |
 | faculdade EAD (já tem Médio) | Contato Unicive | Fluxo cruzado já existe |
 
 ## Estratégia da página

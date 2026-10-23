@@ -5,7 +5,7 @@ Relatório consolidado do ecossistema: [RELATORIO-GERAL-SEO-ECOSSISTEMA.md](RELA
 
 ## Arquitetura
 
-- **Domínio de produção:** cppem-supletivo-filiado.vercel.app (possível domínio próprio `supletivo*.cppem.com.br`) — evidência: `SUPLETIVO_REDIRECT` no `script.js` do Contato Unicive e mapa de origens do Apps Script.
+- **Domínio de produção:** supletivo.cppem.com.br (o cppem-supletivo-filiado.vercel.app segue no ar e aponta o canonical para cá) — evidência: `SUPLETIVO_REDIRECT` no `script.js` do Contato Unicive e mapa de origens do Apps Script.
 - **Stack:** Next.js 14.2 (App Router), React 18, TypeScript, Tailwind 3. Vercel. A branch padrão do GitHub é `claude/nextjs-website-vercel-984Nd` (não há `main`).
 - **Renderização:** Página estática pré-renderizada (SSG). Componentes cliente para FAQ, captação e popup.
 

@@ -8,7 +8,7 @@ Relatório consolidado do ecossistema: [RELATORIO-GERAL-SEO-ECOSSISTEMA.md](RELA
 ## 0 a 30 dias — correções e quick wins
 
 - **Concluído** — Canonical, robots, sitemap, FAQ indexável, JSON-LD
-- **Proposto** — Definir `NEXT_PUBLIC_SITE_URL` se houver domínio próprio (supletivo.cppem.com.br)
+- **Concluído** — Canonical em supletivo.cppem.com.br
 - **Proposto** — Validar com a Estação Cursos as promessas MEC/90 dias
 
 ## 31 a 60 dias — expansão semântica e ajustes por dados

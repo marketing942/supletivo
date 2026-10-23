@@ -9,7 +9,7 @@ Commits na branch `seo/otimizacao-organica-20261023`. Nada foi publicado; merge 
 
 | Arquivo | Alteração | Por quê |
 |---|---|---|
-| lib/constants.ts | `SITE_URL`: `NEXT_PUBLIC_SITE_URL` → `VERCEL_PROJECT_PRODUCTION_URL` (domínio de produção informado pela Vercel no build) → `cppem-supletivo-filiado.vercel.app` | Canonical certo em produção e nas prévias, sem fixar domínio |
+| lib/constants.ts | `SITE_URL`: `NEXT_PUBLIC_SITE_URL` ou `https://supletivo.cppem.com.br` | Canonical no domínio próprio também quando acessado pelo *.vercel.app |
 | app/layout.tsx | `metadataBase`, `alternates.canonical`, `og:url`, `og:site_name`, title |  |
 | app/robots.ts, app/sitemap.ts (novos) | Robots com Sitemap absoluto; sitemap com a URL canônica |  |
 | app/page.tsx | JSON-LD Organization/WebSite/WebPage |  |
@@ -23,8 +23,8 @@ Extraídos do HTML renderizado localmente (Playwright/HTTP), antes e depois.
 |---|---|---|
 | `title` | Supletivo Online em 90 Dias \| Cppem Concursos | Supletivo Online EJA: Ensino Médio em 90 Dias \| Cppem |
 | `description` | Termine o Ensino Médio ou Fundamental + Médio em apenas 90 dias, 100% online e com certificado válido em todo o Brasil. Atendimento humano pelo WhatsApp. | Termine o Ensino Médio ou Fundamental + Médio em apenas 90 dias, 100% online e com certificado válido em todo o Brasil. Atendimento humano pelo WhatsApp. |
-| `canonical` | — | https://cppem-supletivo-filiado.vercel.app/ |
-| `og:url` | — | https://cppem-supletivo-filiado.vercel.app |
+| `canonical` | — | https://supletivo.cppem.com.br |
+| `og:url` | — | https://supletivo.cppem.com.br |
 | `og:site_name` | — | Supletivo Cppem Concursos |
 | JSON-LD |  | Organization, WebSite, WebPage |
 
