@@ -82,6 +82,7 @@ export default function Faq() {
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-resposta-${i}`}
                 >
                   <span className="text-base font-bold text-white sm:text-lg">
                     {f.q}
@@ -92,11 +93,15 @@ export default function Faq() {
                     }`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-5 pb-5 text-sm leading-relaxed text-white/75 sm:text-base">
-                    {f.a}
-                  </div>
-                )}
+                {/* Todas as respostas vão no HTML (só a aberta aparece):
+                    assim o buscador lê as dúvidas sem precisar clicar. */}
+                <div
+                  id={`faq-resposta-${i}`}
+                  hidden={!isOpen}
+                  className="px-5 pb-5 text-sm leading-relaxed text-white/75 sm:text-base"
+                >
+                  {f.a}
+                </div>
               </div>
             );
           })}
