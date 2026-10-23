@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Oxanium, Rajdhani } from "next/font/google";
-import { GTM_LOADER_URL } from "@/lib/constants";
+import { GTM_LOADER_URL, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const display = Oxanium({
@@ -19,7 +19,8 @@ const body = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "Supletivo Online em 90 Dias | Cppem Concursos",
+  metadataBase: new URL(SITE_URL),
+  title: "Supletivo Online EJA: Ensino Médio em 90 Dias | Cppem",
   description:
     "Termine o Ensino Médio ou Fundamental + Médio em apenas 90 dias, 100% online e com certificado válido em todo o Brasil. Atendimento humano pelo WhatsApp.",
   keywords: [
@@ -37,7 +38,10 @@ export const metadata: Metadata = {
       "Ensino Médio e Fundamental completos em 90 dias, de casa, com certificado válido em todo o Brasil.",
     type: "website",
     locale: "pt_BR",
+    url: "/",
+    siteName: "Supletivo Cppem Concursos",
   },
+  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
 };
 

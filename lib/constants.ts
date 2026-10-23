@@ -1,5 +1,14 @@
 export const WHATSAPP_URL = "https://links.cppem.com.br/cppem-contato";
 
+/**
+ * Endereço canônico do site (canonical, og:url, robots e sitemap). O
+ * cppem-supletivo-filiado.vercel.app continua no ar, mas aponta para cá.
+ * NEXT_PUBLIC_SITE_URL sobrescreve, se um dia o domínio mudar.
+ */
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://supletivo.cppem.com.br"
+).replace(/\/+$/, "");
+
 /** Web App do Google Apps Script que grava os leads na aba SUPLETIVO. */
 export const LEADS_ENDPOINT =
   "https://script.google.com/macros/s/AKfycbxdFplWVSfhTjvyIA7HIWb645xRjGNhBVhTdTf5UMjo0lSpW_A_jCuys0qB4uImKXPQ/exec";
